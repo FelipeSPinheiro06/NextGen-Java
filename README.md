@@ -3,9 +3,9 @@
 ### Integrantes:
 - Felipe Cardoso Torlai - RM: 550263
 - Felipe Santos Pinheiro - RM: 550244
-- Gabriel Girami - RM: 98017
-- Gustavo Vinhola - RM: 98826
-- Jean Oliveira - RM: 550430
+- Gabriel Girami de Souza - RM: 98017
+- Gustavo Vinhola dos Santos - RM: 98826
+- Jean Carlos Oliveira Silva - RM: 550430
 
 ## Pré-requisitos
 
@@ -27,6 +27,21 @@
 <img src="src/images/Spring Boot Extension Picture.png" height="100" title="nome imagem">
 
 <br/>
+
+## Imagem dos diagramas
+
+### Diagrama dos domínios da aplicação
+#### Para ver melhor o diagrama, acesse [aqui](#https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0)
+
+<img src="src/images/NextGen Project.png">
+
+### Diagrama Entidade-Relacionamento
+#### {A fazer}
+
+
+## Proposta para a Plusoft
+
+#### Clique [aqui](#https://youtu.be/wQaMeada2r0) para acessar o vídeo da nossa proposta para a Plusoft
 
 ## Recursos
 
@@ -50,7 +65,7 @@
 - Listar Usuário
 
 
-    `GET` /user
+    `GET` /users
 
     Retorna um Array com todos os atributos do user
 
@@ -65,7 +80,7 @@
             "gender": "Masculine",
             "aged": "false",
             "timeOfService": "18",
-            "": ""
+            "exitForecast": "06-13-2025"
         }
     ]
     ```
