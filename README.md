@@ -31,7 +31,7 @@
 ## Imagem dos diagramas
 
 ### Diagrama dos domínios da aplicação
-#### Para ver melhor o diagrama, acesse [aqui](#https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0)
+#### Para ver melhor o diagrama, acesse <a src="https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0">aqui</a>
 
 <img src="src/images/NextGen Project.png">
 
@@ -41,7 +41,8 @@
 
 ## Proposta para a Plusoft
 
-#### Clique [aqui](#https://youtu.be/wQaMeada2r0) para acessar o vídeo da nossa proposta para a Plusoft
+#### Clique <a src="https://youtu.be/wQaMeada2r0">aqui</a> para acessar o vídeo da nossa proposta para a Plusoft
+
 
 ## Recursos
 
