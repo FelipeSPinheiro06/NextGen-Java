@@ -36,7 +36,8 @@
 <img src="src/images/NextGen Project.png">
 
 ### Diagrama Entidade-Relacionamento
-#### {A fazer}
+
+<img src="src/images/NextGen DER.png">
 
 
 ## Proposta para a Plusoft
@@ -54,10 +55,10 @@
 
 ### Endpoints
 
-- [Método Listar]()
-- [Método Cadastrar]()
-- [Método Detalhar]()
-- [Método Apagar]()
+- [Método Listar](#método-listar)
+- [Método Cadastrar](#método-cadastrar)
+- [Método Detalhar](#método-detalhar)
+- [Método Apagar](#método-apagar)
 - [Método Atualizar]()
 
 ### Método Listar
@@ -93,95 +94,347 @@
 
     |código| descrição|
     |------|----------|
-    |200| Aluno retornado com sucesso
-    |401| Autorizado não autorizado. Realize a autenticação em /login 
+    |200| Usuário retornado com sucesso
+    |401| Usuário não autorizado. Realize a autenticação em /login 
     <br/>
 
 
 -  Listar Feedback
 
+    
+    `GET` /feedbacks
+
+    Retorna um Array com todos os atributos do feedback
+
+    #### Exemplo de resposta
+
+    ```js
+    [
+        {
+            "id": 1,
+            "user": "Pedro",
+            "feeling": "Regular",
+            "date": "25-07-2024",
+            "company": "Microsoft"
+        }
+    ]
+    ```
+
+    #### Códigos de resposta
+
+    |código| descrição|
+    |------|----------|
+    |200| Feedback retornado com sucesso
+    |401| Feedback não autorizado. Realize a autenticação em /login 
+    <br/>
 
 
-### Cadastrar Alunos
+-  Listar Empresas
 
-`POST` /alunos
+    
+    `GET` /companies
 
-Cadastro um aluno com o corpo de uma requisição
+    Retorna um Array com todos os atributos da empresa
 
-#### Corpo da requisição
+    #### Exemplo de resposta
 
-|campo|tipo|obrigatório|descrição|
-|-----|----|:-----------:|---------|
-|nome|string|✅|Nome do aluno matriculado
-|turma|string|✅|Turma do aluno respectivo
+    ```js
+    [
+        {
+            "id": 1,
+            "name": "Microsoft",
+            "registrationDate": "02-10-2024",
+            "numberOfFeedbacks": "1",
+            "branch": "Omni CRM"
+        }
+    ]
+    ```
 
-```js
-{
-    "nome": "Pedro",
-    "turma": "A"
-}
-```
+    #### Códigos de resposta
 
-#### Exemplo da resposta
+    |código| descrição|
+    |------|----------|
+    |200| Empresa retornada com sucesso
+    |401| Empresa não autorizada. Realize a autenticação em /login 
+    <br/>
 
-```js
-{
-    "RM": 1,
-    "nome": "Pedro",
-    "turma": "A"
-}
-```
+### Método Cadastrar
 
-#### Códigos de Resposta
-
-|código|descrição|
-|------|---------|
-|200| Aluno cadastrado com sucesso
-|400| Validação falhou. Verifique os dados enviados no corpo da requisição
-|401| não Autorizado. Realize a autenticação em /login
+- Cadastrar Usuário
 
 
-### Apagar Alunos
+    `POST` /users
 
-`DELETE` /categoria/`{id}`
+    Cadastro de um usuário com o corpo de uma requisição
 
-Apaga a categoria com o `id` informado no parâmetro de path.
+    #### Corpo da requisição
+
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |name|string|✅|Nome do usuário matriculado
+    |registrationDate|localdate|✅|Data de cadastro do usuário
+    |isSatisfied|boolean|✅|Satisfação do usuário
+    |gender|string|✅|Gênero do usuário
+    |aged|boolean|✅|Verificar se o usuário é idoso
+    |timeOfService|bigdecimal|✅|Tempo de serviço em meses
+    |exitForecast|localdate|✅|Previsão de saída
+
+    ```js
+    {
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
+
+    #### Exemplo da resposta
+
+    ```js
+    {
+        "id": "1",
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |200| Usuário cadastrado com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
+
+- Cadastrar Feedback
+
+    `POST` /feedbacks
+
+    Cadastro de um feedback com o corpo de uma requisição
+
+    #### Corpo da requisição
+
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |user|string|✅|Nome do usuário que fez o feedback
+    |feeling|enum|✅|Sentimento do dono do feedback
+    |date|localdate|✅|Data de criação do feedback
+    |company|string|✅|Empresa-alvo do feedback
+
+    ```js
+    {
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
+
+    #### Exemplo da resposta
+
+    ```js
+    {
+        "id": "1",
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |200| Feedback guardado com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
 
 
-#### Códigos de Resposta
+- Cadastrar Empresa
 
-|código|descrição|
-|------|---------|
-|201| Aluno apagado com sucesso
-|401| Não autorizado. Realize a autenticação em /login
+    `POST` /companies
+
+    Cadastro de uma empresa com o corpo de uma requisição
+
+    #### Corpo da requisição
+
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |name|string|✅|Nome da empresa em cadastro
+    |registrationDate|localdate|✅|Data de cadastro da empresa
+    |numberOfFeedbacks|integer|✅|Número de feedbacks que a empresa contém
+    |branch|string|✅|Ramo da Plusoft que a empresa está
+
+    ```js
+        {
+            "name": "Microsoft",
+            "registrationDate": "02-10-2024",
+            "numberOfFeedbacks": "1",
+            "branch": "Omni CRM"
+        }
+    ```
+
+    #### Exemplo da resposta
+
+    ```js
+        {
+            "id": "1",
+            "name": "Microsoft",
+            "registrationDate": "02-10-2024",
+            "numberOfFeedbacks": "1",
+            "branch": "Omni CRM"
+        }
+    ```
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |200| Empresa cadastrada com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
+
+
+### Método Apagar
+
+- Apagar usuário
+
+    `DELETE` /users/`{id}`
+
+    Apaga o usuário com o `id` informado no parâmetro de path.
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |201| Usuário apagado com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
+
+- Apagar feedback
+
+    `DELETE` /feedbacks/`{id}`
+
+    Apaga o feedback com o `id` informado no parâmetro de path.
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |201| Feedback apagado com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
+
+- Apagar empresa
+
+    `DELETE` /companies/`{id}`
+
+    Apaga a empresa com o `id` informado no parâmetro de path.
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |201| Feedback apagado com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    <br/>
 
 
 
-### Detalhar Alunos
+### Método Detalhar
 
-`GET` /alunos/`{id}`
+- Detalhar usuários
 
-Retorna os dados do aluno com o `id` informado no parâmetro de path.
+    `GET` /users/`{id}`
 
-#### Exemplo da Resposta
+    Retorna os dados do usuário com o `id` informado no parâmetro de path.
 
-```js
-// requisição /aluno/1
-{
-    "RM": 1,
-    "Nome": "Pedro",
-    "Turma": "A"
-}
-```
+    #### Exemplo da Resposta
 
-#### Código de Resposta
+    ```js
+    // requisição /user/1
+    {
+        "id": "1",
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
 
-|código|descrição|
-|------|---------|
-|204| Aluno retornado com sucesso
-|401| Não autorizado. Realize a autenticação em /login
-|404| Não existe categoria com o `id` informado
+    #### Código de Resposta
 
+    |código|descrição|
+    |------|---------|
+    |204| Usuário retornado com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe usuário com o `id` informado
+
+- Detalhar feedbacks
+
+    `GET` /feedbacks/`{id}`
+
+    Retorna os dados do feedback com o `id` informado no parâmetro de path.
+
+    #### Exemplo da Resposta
+
+    ```js
+    // requisição /feedbacks/1
+    {
+        
+    }
+    ```
+
+    #### Código de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |204| Feedback retornado com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe feedback com o `id` informado
+
+- Detalhar empresas
+
+    `GET` /companies/`{id}`
+
+    Retorna os dados da empresa com o `id` informado no parâmetro de path.
+
+    #### Exemplo da Resposta
+
+    ```js
+    // requisição /companies/1
+    {
+        "id": "1",
+        "name": "Microsoft",
+        "registrationDate": "02-10-2024",
+        "numberOfFeedbacks": "1",
+        "branch": "Omni CRM"
+    }
+    ```
+
+    #### Código de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |204| Empresa retornada com sucesso
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe empresa com o `id` informado
 
 ### Atualizar Alunos
 
