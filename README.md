@@ -59,7 +59,7 @@
 - [Método Cadastrar](#método-cadastrar)
 - [Método Detalhar](#método-detalhar)
 - [Método Apagar](#método-apagar)
-- [Método Atualizar]()
+- [Método Atualizar](#método-atualizar)
 
 ### Método Listar
 
@@ -230,12 +230,10 @@
 
     ```js
     {
-        "name": "Pedro",
-        "registrationDate": "04-01-2024",
-        "gender": "Masculine",
-        "aged": "false",
-        "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "user": "Pedro",
+        "feeling": "Regular",
+        "date": "25-07-2024",
+        "company": "Microsoft"
     }
     ```
 
@@ -243,13 +241,11 @@
 
     ```js
     {
-        "id": "1",
-        "name": "Pedro",
-        "registrationDate": "04-01-2024",
-        "gender": "Masculine",
-        "aged": "false",
-        "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "id": 1,
+        "user": "Pedro",
+        "feeling": "Regular",
+        "date": "25-07-2024",
+        "company": "Microsoft"
     }
     ```
 
@@ -397,7 +393,11 @@
     ```js
     // requisição /feedbacks/1
     {
-        
+        "id": 1,
+        "user": "Pedro",
+        "feeling": "Regular",
+        "date": "25-07-2024",
+        "company": "Microsoft"
     }
     ```
 
@@ -436,43 +436,127 @@
     |401| Não autorizado. Realize a autenticação em /login
     |404| Não existe empresa com o `id` informado
 
-### Atualizar Alunos
+### Método Atualizar
 
-`PUT` /aluno/`{id}`
+- Atualizar Usuário
 
-Atualiza os dados da categoria com o `id` informado na path.
 
-#### Corpo da Requisição
+    `PUT` /users/`{id}`
 
-|campo|tipo|obrigatório|descrição|
-|-----|----|:-----------:|---------|
-|nome|string|✅|nome do aluno matriculado
-|turma|string|✅|turma do aluno respectivo
+    Atualiza os dados do usuário com o `id` informado na path.
 
-```js
-{
-    "nome": "Pedro",
-    "turma": "A"
-}
-```
+    #### Corpo da Requisição
 
-#### Exemplo da resposta
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |name|string|✅|Nome do usuário matriculado
+    |registrationDate|localdate|✅|Data de cadastro do usuário
+    |isSatisfied|boolean|✅|Satisfação do usuário
+    |gender|string|✅|Gênero do usuário
+    |aged|boolean|✅|Verificar se o usuário é idoso
+    |timeOfService|bigdecimal|✅|Tempo de serviço em meses
+    |exitForecast|localdate|✅|Previsão de saída
 
-```js
-{
-    "RM": 1,
-    "nome": "Pedro",
-    "turma": "A"
-}
-```
+    ```js
+    {
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
 
-#### Códigos de Resposta
+    #### Exemplo da resposta
 
-|código|descrição|
-|------|---------|
-|204| Aluno retornado com sucesso
-|400| Validação falhou. Verifique os dados enviados no corpo da requisição
-|401| Não autorizado. Realize a autenticação em /login
-|404| Não existe categoria com o `id` informado
+    ```js
+    {
+        "id": "1",
+        "name": "Pedro",
+        "registrationDate": "04-01-2024",
+        "gender": "Masculine",
+        "aged": "false",
+        "timeOfService": "18",
+        "exitForecast": "06-13-2025"
+    }
+    ```
 
----
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |204| Usuário retornado com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe usuário com o `id` informado
+
+    ---
+    <br/>
+
+- Atualizar Feedback
+
+    `PUT` /feedbacks/`{id}`
+
+    Atualiza os dados do feedback com o `id` informado na path.
+
+    #### Corpo da requisição
+
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |user|string|✅|Nome do usuário que fez o feedback
+    |feeling|enum|✅|Sentimento do dono do feedback
+    |date|localdate|✅|Data de criação do feedback
+    |company|string|✅|Empresa-alvo do feedback
+
+    ```js
+    {
+        "user": "Pedro",
+        "feeling": "Regular",
+        "date": "25-07-2024",
+        "company": "Microsoft"
+    }
+    ```
+
+    #### Exemplo da resposta
+
+    ```js
+    {
+        "id": 1,
+        "user": "Pedro",
+        "feeling": "Regular",
+        "date": "25-07-2024",
+        "company": "Microsoft"
+    }
+    ```
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |204| Feedback retornado com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe feedback com o `id` informado
+
+    ---
+    <br/>
+
+- Atualizar Empresa
+
+    `PUT` /companies/`{id}`
+
+    Atualiza os dados da empresa com o `id` informado na path.
+
+    
+
+    #### Códigos de Resposta
+
+    |código|descrição|
+    |------|---------|
+    |204| Empresa retornada com sucesso
+    |400| Validação falhou. Verifique os dados enviados no corpo da requisição
+    |401| Não autorizado. Realize a autenticação em /login
+    |404| Não existe empresa com o `id` informado
+
+    ---
