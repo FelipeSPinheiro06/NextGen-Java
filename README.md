@@ -548,7 +548,35 @@
 
     Atualiza os dados da empresa com o `id` informado na path.
 
-    
+    #### Corpo da requisição
+
+    |campo|tipo|obrigatório|descrição|
+    |-----|----|:-----------:|---------|
+    |name|string|✅|Nome da empresa em cadastro
+    |registrationDate|localdate|✅|Data de cadastro da empresa
+    |numberOfFeedbacks|integer|✅|Número de feedbacks que a empresa contém
+    |branch|string|✅|Ramo da Plusoft que a empresa está
+
+    ```js
+        {
+            "name": "Microsoft",
+            "registrationDate": "02-10-2024",
+            "numberOfFeedbacks": "1",
+            "branch": "Omni CRM"
+        }
+    ```
+
+    #### Exemplo da resposta
+
+    ```js
+        {
+            "id": "1",
+            "name": "Microsoft",
+            "registrationDate": "02-10-2024",
+            "numberOfFeedbacks": "1",
+            "branch": "Omni CRM"
+        }
+    ```
 
     #### Códigos de Resposta
 
