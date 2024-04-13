@@ -12,7 +12,7 @@ import jakarta.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy=GeneroValidator.class)
 public @interface Genero {
-    String message() default "{movimentacao.tipo}";
+    String message() default "Digite um gênero válido";
 
     Class<?>[] groups() default {};
 

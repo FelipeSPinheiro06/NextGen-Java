@@ -3,11 +3,11 @@ package com.fiap.nextgen.Validation;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class GeneroValidator implements ConstraintValidator<Genero, Boolean> {
+public class GeneroValidator implements ConstraintValidator<Genero, String> {
 
 	@Override
-	public boolean isValid(Boolean value, ConstraintValidatorContext context) {
-		return equals("Masculine") || equals("Feminine");
+	public boolean isValid(String value, ConstraintValidatorContext context) {
+		return value.equals("Masculine") || value.equals("Feminine");
 	}
 
     
