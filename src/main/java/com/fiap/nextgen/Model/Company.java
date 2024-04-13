@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -25,6 +26,10 @@ public class Company {
     @NotNull
     @PastOrPresent
     public LocalDate registrationDate;
+
+    @NotNull
+    @PositiveOrZero
+    public int numberOfFeedbacks;
 
     @NotNull
     public String branch;
