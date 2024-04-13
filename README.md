@@ -78,11 +78,11 @@
         {
             "id": 1,
             "name": "Pedro",
-            "registrationDate": "04-01-2024",
+            "registrationDate": "2024-04-01",
             "gender": "Masculine",
             "aged": "false",
             "timeOfService": "18",
-            "exitForecast": "06-13-2025"
+            "exitForecast": "2025-06-13"
         }
     ]
     ```
@@ -114,7 +114,7 @@
             "id": 1,
             "user": "Pedro",
             "feeling": "Regular",
-            "date": "25-07-2024",
+            "date": "2024-07-25",
             "company": "Microsoft"
         }
     ]
@@ -143,7 +143,7 @@
         {
             "id": 1,
             "name": "Microsoft",
-            "registrationDate": "02-10-2024",
+            "registrationDate": "2024-10-02",
             "numberOfFeedbacks": "1",
             "branch": "Omni CRM"
         }
@@ -182,11 +182,11 @@
     ```js
     {
         "name": "Pedro",
-        "registrationDate": "04-01-2024",
+        "registrationDate": "2024-04-01",
         "gender": "Masculine",
         "aged": "false",
         "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "exitForecast": "2025-06-13"
     }
     ```
 
@@ -196,11 +196,11 @@
     {
         "id": "1",
         "name": "Pedro",
-        "registrationDate": "04-01-2024",
+        "registrationDate": "2024-04-01",
         "gender": "Masculine",
         "aged": "false",
         "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "exitForecast": "2025-06-13"
     }
     ```
 
@@ -232,7 +232,7 @@
     {
         "user": "Pedro",
         "feeling": "Regular",
-        "date": "25-07-2024",
+        "date": "2024-07-25",
         "company": "Microsoft"
     }
     ```
@@ -244,7 +244,7 @@
         "id": 1,
         "user": "Pedro",
         "feeling": "Regular",
-        "date": "25-07-2024",
+        "date": "2024-07-25",
         "company": "Microsoft"
     }
     ```
@@ -277,7 +277,7 @@
     ```js
         {
             "name": "Microsoft",
-            "registrationDate": "02-10-2024",
+            "registrationDate": "2024-10-02",
             "numberOfFeedbacks": "1",
             "branch": "Omni CRM"
         }
@@ -289,7 +289,7 @@
         {
             "id": "1",
             "name": "Microsoft",
-            "registrationDate": "02-10-2024",
+            "registrationDate": "2024-10-02",
             "numberOfFeedbacks": "1",
             "branch": "Omni CRM"
         }
@@ -366,11 +366,11 @@
     {
         "id": "1",
         "name": "Pedro",
-        "registrationDate": "04-01-2024",
+        "registrationDate": "2024-04-01",
         "gender": "Masculine",
         "aged": "false",
         "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "exitForecast": "2025-06-13"
     }
     ```
 
@@ -396,7 +396,7 @@
         "id": 1,
         "user": "Pedro",
         "feeling": "Regular",
-        "date": "25-07-2024",
+        "date": "2024-07-25",
         "company": "Microsoft"
     }
     ```
@@ -422,7 +422,7 @@
     {
         "id": "1",
         "name": "Microsoft",
-        "registrationDate": "02-10-2024",
+        "registrationDate": "2024-10-02",
         "numberOfFeedbacks": "1",
         "branch": "Omni CRM"
     }
@@ -460,11 +460,11 @@
     ```js
     {
         "name": "Pedro",
-        "registrationDate": "04-01-2024",
+        "registrationDate": "2024-04-01",
         "gender": "Masculine",
         "aged": "false",
         "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "exitForecast": "2025-06-13"
     }
     ```
 
@@ -474,11 +474,11 @@
     {
         "id": "1",
         "name": "Pedro",
-        "registrationDate": "04-01-2024",
+        "registrationDate": "2024-01-04",
         "gender": "Masculine",
         "aged": "false",
         "timeOfService": "18",
-        "exitForecast": "06-13-2025"
+        "exitForecast": "2025-06-13"
     }
     ```
 
@@ -513,7 +513,7 @@
     {
         "user": "Pedro",
         "feeling": "Regular",
-        "date": "25-07-2024",
+        "date": "2024-07-25",
         "company": "Microsoft"
     }
     ```
@@ -525,7 +525,7 @@
         "id": 1,
         "user": "Pedro",
         "feeling": "Regular",
-        "date": "25-07-2024",
+        "date": "2024-07-25",
         "company": "Microsoft"
     }
     ```
@@ -560,7 +560,7 @@
     ```js
         {
             "name": "Microsoft",
-            "registrationDate": "02-10-2024",
+            "registrationDate": "2024-10-02",
             "numberOfFeedbacks": "1",
             "branch": "Omni CRM"
         }
@@ -572,7 +572,7 @@
         {
             "id": "1",
             "name": "Microsoft",
-            "registrationDate": "02-10-2024",
+            "registrationDate": "2024-10-02",
             "numberOfFeedbacks": "1",
             "branch": "Omni CRM"
         }
