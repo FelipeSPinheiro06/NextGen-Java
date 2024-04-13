@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fiap.nextgen.DTO.CompanyRequest;
 import com.fiap.nextgen.Model.Company;
 import com.fiap.nextgen.Repository.CompanyRepository;
 
@@ -23,11 +24,13 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
-    public Company createCompany(Company company) {
+    public Company createCompany(CompanyRequest companyRequest) {
+        Company company = constructCompany(companyRequest);
         return companyRepository.save(company);
     }
 
-    public Company updateCompany(Long id, Company company) {
+    public Company updateCompany(Long id, CompanyRequest companyRequest) {
+        Company company = constructCompany(companyRequest);
         checkExistence(id);
         company.setId(id);
         return companyRepository.save(company);
@@ -45,5 +48,13 @@ public class CompanyService {
         return companyRepository
             .findById(id)
             .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Não existe um usuário com este ID"));
+    }
+
+    public Company constructCompany(CompanyRequest companyRequest) {
+        return new Company(companyRequest.id(), 
+                            companyRequest.name(), 
+                            companyRequest.registrationDate(), 
+                            companyRequest.numberOfFeedbacks(), 
+                            companyRequest.branch());
     }
 }

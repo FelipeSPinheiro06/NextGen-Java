@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fiap.nextgen.DTO.UserRequest;
 import com.fiap.nextgen.Model.Users;
 import com.fiap.nextgen.Repository.UserRepository;
 
@@ -23,11 +24,13 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Users createUser(Users user) {
+    public Users createUser(UserRequest userRequest) {
+        Users user = constructUser(userRequest);
         return userRepository.save(user);
     }
 
-    public Users updateUser(Long id, Users user) {
+    public Users updateUser(Long id, UserRequest userRequest) {
+        Users user = constructUser(userRequest);
         checkExistence(id);
         user.setId(id);
         return userRepository.save(user);
@@ -45,5 +48,16 @@ public class UserService {
         return userRepository
             .findById(id)
             .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Não existe um usuário com este ID"));
+    }
+
+    public Users constructUser(UserRequest user) {
+        return new Users(user.id(), 
+                        user.name(), 
+                        user.registrationDate(), 
+                        user.isSatisfied(), 
+                        user.gender(), 
+                        user.aged(), 
+                        user.timeOfService(), 
+                        user.exitForecast());
     }
 }
