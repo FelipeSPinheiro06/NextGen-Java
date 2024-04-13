@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fiap.nextgen.DTO.FeedbackRequest;
 import com.fiap.nextgen.Model.Feedback;
 import com.fiap.nextgen.Service.FeedbackService;
 
@@ -41,13 +42,13 @@ public class FeedbackController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Feedback postMethod(@RequestBody @Valid Feedback feedback) {
+    public Feedback postMethod(@RequestBody @Valid FeedbackRequest feedback) {
         log.info("Cadastrando o feedback...");
         return feedbackService.createFeedback(feedback);
     }
 
     @PutMapping("{id}")
-    public Feedback putMethod(@PathVariable Long id, @RequestBody @Valid Feedback feedback) {
+    public Feedback putMethod(@PathVariable Long id, @RequestBody @Valid FeedbackRequest feedback) {
         return feedbackService.updateFeedback(id, feedback);
     }
 

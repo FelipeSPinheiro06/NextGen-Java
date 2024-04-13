@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fiap.nextgen.DTO.CompanyRequest;
 import com.fiap.nextgen.Model.Company;
 import com.fiap.nextgen.Service.CompanyService;
 
@@ -41,14 +42,14 @@ public class CompanyController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Company postMethod(@RequestBody @Valid Company company) {
+    public Company postMethod(@RequestBody @Valid CompanyRequest companyRequest) {
         log.info("Cadastrando uma empresa...");
-        return companyService.createCompany(company);
+        return companyService.createCompany(companyRequest);
     }
 
     @PutMapping("{id}")
-    public Company putMethod(@PathVariable Long id, @RequestBody @Valid Company company) {
-        return companyService.updateCompany(id, company);
+    public Company putMethod(@PathVariable Long id, @RequestBody @Valid CompanyRequest companyRequest) {
+        return companyService.updateCompany(id, companyRequest);
     }
 
     @DeleteMapping("{id}")

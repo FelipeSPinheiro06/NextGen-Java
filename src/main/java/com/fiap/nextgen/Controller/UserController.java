@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fiap.nextgen.DTO.UserRequest;
 import com.fiap.nextgen.Model.Users;
 import com.fiap.nextgen.Service.UserService;
 
@@ -41,13 +42,13 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Users postMethod(@RequestBody @Valid Users user) {
+    public Users postMethod(@RequestBody @Valid UserRequest user) {
         log.info("Cadastrando o usuário...");
         return userService.createUser(user);
     }
 
     @PutMapping("{id}")
-    public Users putMethod(@PathVariable Long id, @RequestBody @Valid Users user) {
+    public Users putMethod(@PathVariable Long id, @RequestBody @Valid UserRequest user) {
         return userService.updateUser(id, user);
     }
 
