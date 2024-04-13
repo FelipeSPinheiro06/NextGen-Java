@@ -29,6 +29,10 @@ public class FeedbackController {
 
     FeedbackService feedbackService;
 
+    public FeedbackController(FeedbackService feedbackService) {
+        this.feedbackService = feedbackService;
+    }
+
     @GetMapping
     public List<Feedback> getMethod() {
         log.info("Pegando os feedbacks...");

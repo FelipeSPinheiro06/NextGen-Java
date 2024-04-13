@@ -29,6 +29,10 @@ public class CompanyController {
 
     CompanyService companyService;
 
+    public CompanyController(CompanyService companyService) {
+        this.companyService = companyService;
+    }
+
     @GetMapping
     public List<Company> getMethod() {
         log.info("Pegando as empresas...");
