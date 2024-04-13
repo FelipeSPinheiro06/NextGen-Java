@@ -33,6 +33,8 @@
 ### Diagrama dos domínios da aplicação
 #### Para ver melhor o diagrama, acesse <a href="https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0">aqui</a>
 
+#### Para ver uma explicação resumida do diagrama, clique <a href="https://youtu.be/pTT5xAGuAkY">aqui</a>
+
 <img src="src/images/NextGen Project.png">
 
 ### Diagrama Entidade-Relacionamento
