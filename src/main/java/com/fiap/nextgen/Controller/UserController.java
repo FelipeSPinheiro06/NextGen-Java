@@ -1,12 +1,10 @@
 package com.fiap.nextgen.Controller;
 
 import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.fiap.nextgen.Model.Users;
-import com.fiap.nextgen.Repository.UserRepository;
+import com.fiap.nextgen.Service.UserService;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -29,45 +26,39 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequestMapping(path = "users")
 public class UserController {
-    
-    @Autowired
-    UserRepository userRepository;
 
-    
+    UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping
     public List<Users> getMethod() {
         log.info("Pegando os usuários...");
-        return userRepository.findAll();
+        return userService.GrabAllUsers();
     }
 
     @PostMapping
     @ResponseStatus(CREATED)
     public Users postMethod(@RequestBody @Valid Users user) {
         log.info("Cadastrando o usuário...");
-        return userRepository.save(user);
+        return userService.createUser(user);
     }
 
     @PutMapping("{id}")
     public Users putMethod(@PathVariable Long id, @RequestBody @Valid Users user) {
-        checkExistence(id);
-        user.setId(id);
-        return userRepository.save(user);
+        return userService.updateUser(id, user);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     public void deleteMethod(@PathVariable @Valid Long id) {
-        userRepository.deleteById(id);
+        userService.deleteUser(id);
     }
 
     @GetMapping("{id}")
     public Users getByID(@PathVariable Long id) {
-        return checkExistence(id);
-    }
-    
-    public Users checkExistence(Long id) {
-        return userRepository
-            .findById(id)
-            .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Não existe um usuário com este ID"));
+        return userService.GrabUserByID(id);
     }
 }
