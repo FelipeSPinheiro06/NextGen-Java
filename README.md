@@ -7,6 +7,8 @@
 - Gustavo Vinhola dos Santos - RM: 98826
 - Jean Carlos Oliveira Silva - RM: 550430
 
+#### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/CrxlJHl9OWQ">aqui</a>
+
 ## Pré-requisitos
 
 - JDK Instalado: Clique aqui para instalar
