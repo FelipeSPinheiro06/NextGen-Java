@@ -9,6 +9,8 @@
 
 #### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/CrxlJHl9OWQ">aqui</a>
 
+#### Para visualizar o nosso cronograma, clique <a href="https://app.asana.com/0/1206957899412927/1206957914883745">aqui</a>
+
 ## Pré-requisitos
 
 - JDK Instalado: Clique aqui para instalar
