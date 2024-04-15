@@ -32,6 +32,14 @@
 
 <br/>
 
+4. Vá para o documento: "NextgenApplication.java".
+
+<br/>
+
+5. Clique em "Run" ou aperte F5.
+
+<br/>
+
 ## Imagem dos diagramas
 
 ### Diagrama dos domínios da aplicação
