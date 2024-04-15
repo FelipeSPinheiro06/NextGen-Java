@@ -7,7 +7,7 @@
 - Gustavo Vinhola dos Santos - RM: 98826
 - Jean Carlos Oliveira Silva - RM: 550430
 
-#### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/CrxlJHl9OWQ">aqui</a>
+#### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/ScV3BzL0OvQ">aqui</a>
 
 #### Para visualizar o nosso cronograma, clique <a href="https://app.asana.com/0/1206957899412927/1206957914883745">aqui</a>
 
