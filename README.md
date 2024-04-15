@@ -58,6 +58,7 @@
 
 #### Clique <a href="https://youtu.be/wQaMeada2r0">aqui</a> para acessar o vídeo da nossa proposta para a Plusoft
 
+#### Para saber mais sobre nosso projeto, vá na pasta "Documentos do Projeto" que está no começo e vá em "Proposta de Solução"
 
 ## Recursos
 
