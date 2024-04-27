@@ -4,7 +4,11 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 import java.util.List;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fiap.nextgen.DTO.FeedbackRequest;
@@ -20,7 +24,24 @@ public class FeedbackService {
         this.feedRepository = feedRepository;
     }
 
-    public List<Feedback> getAllFeedbacks() {
+    public List<Feedback> getAllFeedbacks(
+        @RequestParam(required = false) String company,
+        @RequestParam(required = false) Integer mes,
+        @PageableDefault(size = 5, sort = "data", direction = Direction.DESC) Pageable pageable
+    ) {
+
+        // if (mes != null && company != null) {
+        //     return feedRepository.findByCompanyNameAndMes(company, mes, pageable);
+        // }
+
+        // if (mes != null) {
+        //     return feedRepository.findByMes(mes, pageable);
+        // }
+
+        // if (company != null) {
+        //     return feedRepository.findByCompany(company, pageable);
+        // }
+
         return feedRepository.findAll();
     }
 
@@ -51,9 +72,10 @@ public class FeedbackService {
     }
 
     public Feedback constructFeedback(FeedbackRequest feedback) {
-        return new Feedback(feedback.id(),
+        return new Feedback(feedback.id(), 
                             feedback.feeling(), 
-                            feedback.date(),
-                            feedback.company());
+                            feedback.date(), 
+                            feedback.company()
+                            );
     }
 }
