@@ -75,7 +75,6 @@ public class FeedbackService {
         return new Feedback(feedback.id(), 
                             feedback.feeling(), 
                             feedback.date(), 
-                            feedback.company()
-                            );
+                            feedback.company());
     }
 }

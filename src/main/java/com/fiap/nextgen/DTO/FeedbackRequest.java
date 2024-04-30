@@ -2,6 +2,8 @@ package com.fiap.nextgen.DTO;
 
 import java.time.LocalDate;
 
+import com.fiap.nextgen.Model.Company;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,7 +23,7 @@ public record FeedbackRequest(
     LocalDate date,
 
     @NotNull
-    String company
+    Company company
 
 
 ) {}
