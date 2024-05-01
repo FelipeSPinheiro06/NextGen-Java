@@ -1,5 +1,6 @@
 package com.fiap.nextgen.DTO;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public record CompanyRequest(
 
     @NotNull
     @PositiveOrZero
-    int numberOfFeedbacks,
+    BigDecimal numberOfFeedbacks,
 
     @NotNull
     String branch
