@@ -32,17 +32,23 @@ public class DatabaseSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         userRepository.saveAll(
             List.of(
-                Users.builder().id(1L).name("Felipe").registrationDate(LocalDate.now().minusYears(2)).isSatisfied(true).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(12)).exitForecast(LocalDate.now().plusYears(2)).build(),
-                Users.builder().id(2L).name("Gabriel").registrationDate(LocalDate.now().minusMonths(3)).isSatisfied(false).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(15)).exitForecast(LocalDate.now().plusYears(3)).build(),
-                Users.builder().id(3L).name("Gustavo").registrationDate(LocalDate.now().minusWeeks(3)).isSatisfied(true).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(17)).exitForecast(LocalDate.now().plusYears(4)).build()
+                Users.builder().id(1L).name("Felipe").registrationDate(LocalDate.now().minusYears(2))
+                    .isSatisfied(true).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(12)).exitForecast(LocalDate.now().plusYears(2)).build(),
+                Users.builder().id(2L).name("Gabriel").registrationDate(LocalDate.now().minusMonths(3))
+                    .isSatisfied(false).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(15)).exitForecast(LocalDate.now().plusYears(3)).build(),
+                Users.builder().id(3L).name("Gustavo").registrationDate(LocalDate.now().minusWeeks(3))
+                    .isSatisfied(true).gender("Masculine").aged(false).timeOfService(BigDecimal.valueOf(17)).exitForecast(LocalDate.now().plusYears(4)).build()
             )
         );
 
         companyRepository.saveAll(
             List.of(
-                Company.builder().id(1L).name("Apple").registrationDate(LocalDate.of(1985, 4, 15)).numberOfFeedbacks(0).branch("Omni CRM").build(),
-                Company.builder().id(2L).name("Microsoft").registrationDate(LocalDate.of(1996, 9, 2)).numberOfFeedbacks(1).branch("Social").build(),
-                Company.builder().id(3L).name("Samsung").registrationDate(LocalDate.of(2005, 7, 6)).numberOfFeedbacks(2).branch("AI").build()
+                Company.builder().id(1L).name("Apple").registrationDate(LocalDate.of(1985, 4, 15))
+                    .numberOfFeedbacks(BigDecimal.ZERO).branch("Omni CRM").build(),
+                Company.builder().id(2L).name("Microsoft").registrationDate(LocalDate.of(1996, 9, 2))
+                    .numberOfFeedbacks(BigDecimal.ONE).branch("Social").build(),
+                Company.builder().id(3L).name("Samsung").registrationDate(LocalDate.of(2005, 7, 6))
+                    .numberOfFeedbacks(BigDecimal.valueOf(2)).branch("AI").build()
             )
         );
 
