@@ -49,17 +49,20 @@ public class CompanyController {
 
     @PutMapping("{id}")
     public Company putMethod(@PathVariable Long id, @RequestBody @Valid CompanyRequest companyRequest) {
+        log.info("Atualizando a empresa");
         return companyService.updateCompany(id, companyRequest);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     public void deleteMethod(@PathVariable @Valid Long id) {
+        log.info("Deletando a empresa");
         companyService.deleteCompany(id);
     }
 
     @GetMapping("{id}")
     public Company getByID(@PathVariable Long id) {
+        log.info("Pegando a empresa com o id " + id);
         return companyService.getCompanyById(id);
     }
 }
