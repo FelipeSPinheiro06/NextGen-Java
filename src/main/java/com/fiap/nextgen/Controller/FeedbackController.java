@@ -57,17 +57,20 @@ public class FeedbackController {
 
     @PutMapping("{id}")
     public Feedback putMethod(@PathVariable Long id, @RequestBody @Valid FeedbackRequest feedback) {
+        log.info("Atualizando o feedback com o id " + id);
         return feedbackService.updateFeedback(id, feedback);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     public void deleteMethod(@PathVariable @Valid Long id) {
+        log.info("Deletando o feedback com o id " + id);
         feedbackService.deleteFeedback(id);
     }
 
     @GetMapping("{id}")
     public Feedback getByID(@PathVariable Long id) {
+        log.info("Pegando o feedback com o id " + id);
         return feedbackService.getFeedbackByID(id);
     }
 }
