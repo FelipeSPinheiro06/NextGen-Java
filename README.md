@@ -51,7 +51,7 @@
 
 ### Diagrama Entidade-Relacionamento
 
-<img src="src/images/NextGen DER.png">
+<img src="src/images/NextGen DER 2.png">
 
 
 ## Proposta para a Plusoft
