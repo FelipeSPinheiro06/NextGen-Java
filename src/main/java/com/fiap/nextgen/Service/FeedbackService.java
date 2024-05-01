@@ -45,6 +45,11 @@ public class FeedbackService {
         return feedRepository.findAll();
     }
 
+    public List<Feedback> getAllFeedbacks() {
+        return feedRepository.findAll();
+    }
+
+
     public Feedback createFeedback(FeedbackRequest feedbackRequest) {
         Feedback feedback = constructFeedback(feedbackRequest);
         return feedRepository.save(feedback);
