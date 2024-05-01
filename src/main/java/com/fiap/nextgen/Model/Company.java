@@ -1,5 +1,6 @@
 package com.fiap.nextgen.Model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
@@ -35,7 +36,7 @@ public class Company {
 
     @NotNull
     @PositiveOrZero
-    public int numberOfFeedbacks;
+    public BigDecimal numberOfFeedbacks;
 
     @NotNull
     public String branch;
