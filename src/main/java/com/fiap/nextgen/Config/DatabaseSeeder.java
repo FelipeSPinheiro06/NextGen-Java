@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.fiap.nextgen.Model.Company;
+import com.fiap.nextgen.Model.Feedback;
 import com.fiap.nextgen.Model.Users;
 import com.fiap.nextgen.Repository.CompanyRepository;
 import com.fiap.nextgen.Repository.FeedbackRepository;
@@ -16,7 +18,6 @@ import com.fiap.nextgen.Repository.UserRepository;
 @Configuration
 public class DatabaseSeeder implements CommandLineRunner {
 
-    // TODO: Corrigir erro do Builder
 
     @Autowired
     UserRepository userRepository;
@@ -37,7 +38,21 @@ public class DatabaseSeeder implements CommandLineRunner {
             )
         );
 
+        companyRepository.saveAll(
+            List.of(
+                Company.builder().id(1L).name("Apple").registrationDate(LocalDate.of(1985, 4, 15)).numberOfFeedbacks(0).branch("Omni CRM").build(),
+                Company.builder().id(2L).name("Microsoft").registrationDate(LocalDate.of(1996, 9, 2)).numberOfFeedbacks(1).branch("Social").build(),
+                Company.builder().id(3L).name("Samsung").registrationDate(LocalDate.of(2005, 7, 6)).numberOfFeedbacks(2).branch("AI").build()
+            )
+        );
 
+        feedbackRepository.saveAll(
+            List.of(
+                Feedback.builder().id(1L).feeling("Terrible").date(LocalDate.of(2010, 12, 25)).company(companyRepository.findById(1L).get()).build(), 
+                Feedback.builder().id(2L).feeling("Regular").date(LocalDate.of(2015, 1, 2)).company(companyRepository.findById(2L).get()).build(), 
+                Feedback.builder().id(3L).feeling("Awesome").date(LocalDate.of(2020, 5, 15)).company(companyRepository.findById(3L).get()).build()
+            )
+        );
 
     }
 
