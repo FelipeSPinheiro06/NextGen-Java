@@ -42,7 +42,7 @@ public class FeedbackController {
     public List<Feedback> getMethod(
         @RequestParam(required = false) String company,
         @RequestParam(required = false) Integer mes,
-        @PageableDefault(size = 5, sort = "data", direction = Direction.DESC) Pageable pageable
+        @PageableDefault(size = 5, sort = "date", direction = Direction.DESC) Pageable pageable
     ) {
         log.info("Pegando os feedbacks...");
         return feedbackService.getAllFeedbacks(company, mes, pageable);
