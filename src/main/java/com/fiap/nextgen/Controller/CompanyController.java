@@ -5,6 +5,8 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 @RequestMapping(path = "companies")
+@CacheConfig(cacheNames = "companies")
 public class CompanyController {
 
     CompanyService companyService;
@@ -42,19 +45,22 @@ public class CompanyController {
 
     @PostMapping
     @ResponseStatus(CREATED)
+    @CacheEvict(allEntries = true)
     public Company postMethod(@RequestBody @Valid CompanyRequest companyRequest) {
         log.info("Cadastrando uma empresa...");
         return companyService.createCompany(companyRequest);
     }
-
+    
     @PutMapping("{id}")
+    @CacheEvict(allEntries = true)
     public Company putMethod(@PathVariable Long id, @RequestBody @Valid CompanyRequest companyRequest) {
-        log.info("Atualizando a empresa");
+        log.info("Atualizando a empresa com o id " + id);
         return companyService.updateCompany(id, companyRequest);
     }
-
+    
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @CacheEvict(allEntries = true)
     public void deleteMethod(@PathVariable @Valid Long id) {
         log.info("Deletando a empresa");
         companyService.deleteCompany(id);

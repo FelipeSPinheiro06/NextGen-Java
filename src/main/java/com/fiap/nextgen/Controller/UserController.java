@@ -5,6 +5,8 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 @RequestMapping(path = "users")
+@CacheConfig(cacheNames = "users")
 public class UserController {
 
     UserService userService;
@@ -42,18 +45,21 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(CREATED)
+    @CacheEvict(allEntries = true)
     public Users postMethod(@RequestBody @Valid UserRequest user) {
         log.info("Cadastrando o usuário...");
         return userService.createUser(user);
     }
-
+    
     @PutMapping("{id}")
+    @CacheEvict(allEntries = true)
     public Users putMethod(@PathVariable Long id, @RequestBody @Valid UserRequest user) {
         return userService.updateUser(id, user);
     }
-
+    
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @CacheEvict(allEntries = true)
     public void deleteMethod(@PathVariable @Valid Long id) {
         userService.deleteUser(id);
     }
