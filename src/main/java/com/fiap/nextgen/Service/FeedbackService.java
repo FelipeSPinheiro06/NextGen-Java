@@ -27,20 +27,20 @@ public class FeedbackService {
     public List<Feedback> getAllFeedbacks(
         @RequestParam(required = false) String company,
         @RequestParam(required = false) Integer mes,
-        @PageableDefault(size = 5, sort = "data", direction = Direction.DESC) Pageable pageable
+        @PageableDefault(size = 5, sort = "date", direction = Direction.DESC) Pageable pageable
     ) {
 
-        // if (mes != null && company != null) {
-        //     return feedRepository.findByCompanyNameAndMes(company, mes, pageable);
-        // }
+        if (mes != null && company != null) {
+            return feedRepository.findByCompanyNameAndMes(company, mes, pageable);
+        }
 
-        // if (mes != null) {
-        //     return feedRepository.findByMes(mes, pageable);
-        // }
+        if (mes != null) {
+            return feedRepository.findByMes(mes, pageable);
+        }
 
-        // if (company != null) {
-        //     return feedRepository.findByCompany(company, pageable);
-        // }
+        if (company != null) {
+            return feedRepository.findByCompanyName(company, pageable);
+        }
 
         return feedRepository.findAll();
     }
