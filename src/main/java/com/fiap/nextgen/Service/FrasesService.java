@@ -52,4 +52,8 @@ public class FrasesService {
         );
     }
 
+    public Frases getFrasesById(Long id) {
+        return checkExistence(id);
+    }
+
 }

@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -56,4 +58,11 @@ public class FrasesController {
         log.info("Apagando as frases criadas");
         frasesService.delete(id);
     }
+
+    @GetMapping("{id}")
+    public Frases getFrasesByID(@PathVariable Long id) {
+        log.info("Pegando a frase com o id " + id);
+        return frasesService.getFrasesById(id);
+    }
+    
 }
