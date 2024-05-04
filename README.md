@@ -9,7 +9,7 @@
 
 #### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/KEzjEcPPCak" target="_blank">aqui</a>
 
-#### Para visualizar o nosso cronograma, clique <a href="https://app.asana.com/0/1206957899412927/1206957914883745" target="_blank">aqui</a>
+#### Para visualizar o nosso cronograma, clique <a href="https://fsp12371s-team.monday.com/boards/6535439487" target="_blank">aqui</a>
 
 ## Pré-requisitos
 
@@ -47,7 +47,9 @@
 
 #### Para ver uma explicação resumida do diagrama, clique <a href="https://youtu.be/ScV3BzL0OvQ" target="_blank">aqui</a>
 
-<img src="src/images/NextGen Project.png">
+#### Veja a explicação da mudança da Sprint 2 para a Sprint 1 <a href="https://youtu.be/VLTe4bl_zqA" target="_blank">aqui</a>
+
+<img src="src/images/NextGen Class Diagram.png">
 
 ### Diagrama Entidade-Relacionamento
 
