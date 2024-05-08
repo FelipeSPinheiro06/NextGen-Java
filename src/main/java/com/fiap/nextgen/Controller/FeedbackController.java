@@ -3,7 +3,10 @@ package com.fiap.nextgen.Controller;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -73,4 +76,22 @@ public class FeedbackController {
         log.info("Pegando o feedback com o id " + id);
         return feedbackService.getFeedbackByID(id);
     }
+
+    //TODO: Resolver esse bug
+    @GetMapping("media-nota-empresa")
+    public Map<String, Double> getMediaNotaEmpresa() {
+
+        var feedbacks = feedbackService.getAllFeedbacks();
+
+        var collect = feedbacks.stream()
+            .collect(
+                Collectors.groupingBy(
+                    f -> f.getCompany().getName(),
+                    Collectors.averagingDouble(f -> f.getFeeling().getFeeling())
+                )
+            );
+
+        return collect;
+    }
 }
+

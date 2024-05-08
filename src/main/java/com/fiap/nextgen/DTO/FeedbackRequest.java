@@ -3,6 +3,7 @@ package com.fiap.nextgen.DTO;
 import java.time.LocalDate;
 
 import com.fiap.nextgen.Model.Company;
+import com.fiap.nextgen.Model.DicionarioSentimentos;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +17,7 @@ public record FeedbackRequest(
     Long id,
 
     @NotNull
-    String feeling,
+    DicionarioSentimentos feeling,
 
     @NotNull
     @PastOrPresent

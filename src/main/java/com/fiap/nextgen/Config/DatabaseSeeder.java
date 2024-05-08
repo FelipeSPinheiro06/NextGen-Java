@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import com.fiap.nextgen.Model.Company;
+import com.fiap.nextgen.Model.DicionarioSentimentos;
 import com.fiap.nextgen.Model.Feedback;
 import com.fiap.nextgen.Model.Users;
 import com.fiap.nextgen.Repository.CompanyRepository;
@@ -54,9 +55,9 @@ public class DatabaseSeeder implements CommandLineRunner {
 
         feedbackRepository.saveAll(
             List.of(
-                Feedback.builder().id(1L).feeling("Terrible").date(LocalDate.of(2010, 12, 25)).company(companyRepository.findById(1L).get()).build(), 
-                Feedback.builder().id(2L).feeling("Regular").date(LocalDate.of(2015, 1, 2)).company(companyRepository.findById(2L).get()).build(), 
-                Feedback.builder().id(3L).feeling("Awesome").date(LocalDate.of(2020, 5, 15)).company(companyRepository.findById(3L).get()).build()
+                Feedback.builder().id(1L).feeling(DicionarioSentimentos.TERRIBLE).date(LocalDate.of(2010, 12, 25)).company(companyRepository.findById(1L).get()).build(), 
+                Feedback.builder().id(2L).feeling(DicionarioSentimentos.REGULAR).date(LocalDate.of(2015, 1, 2)).company(companyRepository.findById(2L).get()).build(), 
+                Feedback.builder().id(3L).feeling(DicionarioSentimentos.AWESOME).date(LocalDate.of(2020, 5, 15)).company(companyRepository.findById(3L).get()).build()
             )
         );
 
