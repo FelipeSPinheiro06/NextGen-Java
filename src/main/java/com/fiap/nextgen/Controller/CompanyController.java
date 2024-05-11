@@ -64,7 +64,7 @@ public class CompanyController {
         description = "Cadastro de uma empresa com o corpo de uma requisição"
     )
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Empresacadastrada com sucesso!"),
+        @ApiResponse(responseCode = "200", description = "Empresa cadastrada com sucesso!"),
         @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique os dados enviados no corpo da requisição"),
         @ApiResponse(responseCode = "401", description = "Não autorizado. Realize a autenticação em /login")
     })
@@ -98,7 +98,7 @@ public class CompanyController {
         description = "Apaga a empresa com o id informado no parâmetro de path"
     )
     @ApiResponses({
-        @ApiResponse(responseCode = "201", description = "Empresa apagada com sucesso!"),
+        @ApiResponse(responseCode = "204", description = "Empresa apagada com sucesso!"),
         @ApiResponse(responseCode = "401", description = "Não autorizado. Realize a autenticação em /login")
     })
     public void deleteMethod(@PathVariable @Valid Long id) {
