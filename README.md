@@ -73,4 +73,4 @@
 
 ### Endpoints
 
-#### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">link</a>.
+#### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/docs" target="_blank">link</a>.
