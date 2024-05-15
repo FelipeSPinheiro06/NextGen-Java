@@ -43,11 +43,11 @@
 ## Imagem dos diagramas
 
 ### Diagrama dos domínios da aplicação
-#### Para ver melhor o diagrama, acesse <a href="https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0" target="_blank">aqui</a>
+- #### Para ver melhor o diagrama, acesse <a href="https://lucid.app/lucidchart/a0fc1580-7050-44fe-aded-730dcba88d91/edit?viewport_loc=526%2C467%2C4267%2C1982%2CHWEp-vi-RSFO&invitationId=inv_3ceb64c0-1371-4540-99c9-09216c3434c0" target="_blank">aqui</a>
 
-#### Para ver uma explicação resumida do diagrama, clique <a href="https://youtu.be/ScV3BzL0OvQ" target="_blank">aqui</a>
+- #### Para ver uma explicação resumida do diagrama, clique <a href="https://youtu.be/ScV3BzL0OvQ" target="_blank">aqui</a>
 
-#### Veja a explicação da mudança da Sprint 2 para a Sprint 1 <a href="https://youtu.be/VLTe4bl_zqA" target="_blank">aqui</a>
+- #### Veja a explicação da mudança do diagrama da Sprint 1 para a Sprint 2 <a href="https://youtu.be/VLTe4bl_zqA" target="_blank">aqui</a>
 
 <img src="src/images/NextGen Class Diagram.png">
 
@@ -58,9 +58,9 @@
 
 ## Proposta para a Plusoft
 
-#### Clique <a href="https://youtu.be/wQaMeada2r0">aqui</a> para acessar o vídeo da nossa proposta para a Plusoft
+- #### Clique <a href="https://youtu.be/wQaMeada2r0">aqui</a> para acessar o vídeo da nossa proposta para a Plusoft
 
-#### Para saber mais sobre nosso projeto, vá na pasta "Documentos do Projeto" que está no começo e vá em "Proposta de Solução"
+- #### Para saber mais sobre nosso projeto, vá na pasta "Documentos do Projeto" que está no começo e vá em "Proposta de Solução"
 
 ## Recursos
 
@@ -73,4 +73,6 @@
 
 ### Endpoints
 
-#### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">link</a>.
+- #### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">link</a>.
+
+- #### Acesse a documentação das novas funcionalidades [aqui](/Documentos%20do%20Projeto/NextGen%20-%20Altera%C3%A7%C3%B5es%20Feitas.docx).
