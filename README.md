@@ -73,6 +73,4 @@
 
 ### Endpoints
 
-- #### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">link</a>.
-
-- #### Acesse a documentação das novas funcionalidades [aqui](/Documentos%20do%20Projeto/NextGen%20-%20Altera%C3%A7%C3%B5es%20Feitas.docx).
+#### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/docs" target="_blank">link</a>.
