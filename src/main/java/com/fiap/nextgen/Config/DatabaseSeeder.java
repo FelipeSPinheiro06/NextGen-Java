@@ -11,9 +11,11 @@ import org.springframework.context.annotation.Configuration;
 import com.fiap.nextgen.Model.Company;
 import com.fiap.nextgen.Model.DicionarioSentimentos;
 import com.fiap.nextgen.Model.Feedback;
+import com.fiap.nextgen.Model.Frases;
 import com.fiap.nextgen.Model.Users;
 import com.fiap.nextgen.Repository.CompanyRepository;
 import com.fiap.nextgen.Repository.FeedbackRepository;
+import com.fiap.nextgen.Repository.FrasesRepository;
 import com.fiap.nextgen.Repository.UserRepository;
 
 @Configuration
@@ -28,6 +30,9 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     @Autowired
     FeedbackRepository feedbackRepository;
+
+    @Autowired
+    FrasesRepository frasesRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -57,7 +62,18 @@ public class DatabaseSeeder implements CommandLineRunner {
             List.of(
                 Feedback.builder().id(1L).feeling(DicionarioSentimentos.TERRIBLE).date(LocalDate.of(2010, 12, 25)).company(companyRepository.findById(1L).get()).build(), 
                 Feedback.builder().id(2L).feeling(DicionarioSentimentos.REGULAR).date(LocalDate.of(2015, 1, 2)).company(companyRepository.findById(2L).get()).build(), 
-                Feedback.builder().id(3L).feeling(DicionarioSentimentos.AWESOME).date(LocalDate.of(2020, 5, 15)).company(companyRepository.findById(3L).get()).build()
+                Feedback.builder().id(3L).feeling(DicionarioSentimentos.AWESOME).date(LocalDate.of(2020, 5, 15)).company(companyRepository.findById(3L).get()).build(),
+                Feedback.builder().id(4L).feeling(DicionarioSentimentos.BAD).date(LocalDate.of(2005, 7, 12)).company(companyRepository.findById(1L).get()).build(),
+                Feedback.builder().id(5L).feeling(DicionarioSentimentos.GOOD).date(LocalDate.of(2012, 3, 8)).company(companyRepository.findById(2L).get()).build(),
+                Feedback.builder().id(6L).feeling(DicionarioSentimentos.TERRIBLE).date(LocalDate.of(2019, 9, 20)).company(companyRepository.findById(3L).get()).build()
+            )
+        );
+
+        frasesRepository.saveAll(
+            List.of(
+                Frases.builder().id(1L).frase("Brabo demais").build(), 
+                Frases.builder().id(2L).frase("Médio").build(), 
+                Frases.builder().id(3L).frase("Esse atendimento é precário").build()
             )
         );
 
