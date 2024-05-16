@@ -47,7 +47,7 @@
 
 - #### Para ver uma explicação resumida do diagrama, clique <a href="https://youtu.be/ScV3BzL0OvQ" target="_blank">aqui</a>
 
-- #### Veja a explicação da mudança do diagrama da Sprint 1 para a Sprint 2 <a href="https://youtu.be/VLTe4bl_zqA" target="_blank">aqui</a>
+- #### Veja a explicação da mudança do diagrama da Sprint 2 para a Sprint 1 <a href="https://youtu.be/VLTe4bl_zqA" target="_blank">aqui</a>
 
 <img src="src/images/NextGen Class Diagram.png">
 
@@ -73,4 +73,6 @@
 
 ### Endpoints
 
-#### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/docs" target="_blank">link</a>.
+- #### Para visualizar os endpoints, rode o aplicativo e acesse esse <a href="http://localhost:8080/swagger-ui/docs" target="_blank">link</a>.
+
+- #### Acesse a documentação das novas funcionalidades [aqui](/Documentos%20do%20Projeto/NextGen%20-%20Altera%C3%A7%C3%B5es%20Feitas.docx).
