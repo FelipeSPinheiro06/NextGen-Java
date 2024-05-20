@@ -7,9 +7,9 @@
 - Gustavo Vinhola dos Santos - RM: 98826
 - Jean Carlos Oliveira Silva - RM: 550430
 
-#### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/KEzjEcPPCak" target="_blank">aqui</a>
+#### Para visualizar a nossa apresentação, clique <a href="https://youtu.be/HphEaeNU5F4" target="_blank">aqui</a>
 
-#### Para visualizar o nosso cronograma, clique <a href="https://fsp12371s-team.monday.com/boards/6535439487" target="_blank">aqui</a>
+#### Para visualizar o nosso cronograma, clique <a href="https://trello.com/invite/b/dCdWzRPe/ATTI9ee45ff55747999df70284a390ff5bc6279F0AD0/nextgen-board" target="_blank">aqui</a>
 
 ## Pré-requisitos
 
